@@ -1,4 +1,8 @@
-# react
+# Dharma Sprint
+
+Attention is one of the most valuable currencies of the modern era. Dharma sprints are one of my favorite practices for honing my attention.
+
+This is a terminal timer that allows you to set an intention and a duration. The intention and timer are then displayed on screen. When your mind wanders, look at your intention to get back on track.
 
 To install dependencies:
 
