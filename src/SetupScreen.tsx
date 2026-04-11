@@ -28,9 +28,9 @@ export function SetupScreen({ onStart }: Props) {
   });
 
   const handleStart = useCallback((intentionValue: string, durationValue: string) => {
-    const minutes = parseDuration(durationValue);
-    if (intentionValue.trim() && minutes !== null) {
-      onStart({ intention: intentionValue.trim(), durationMinutes: minutes });
+    const seconds = parseDuration(durationValue);
+    if (intentionValue.trim() && seconds !== null) {
+      onStart({ intention: intentionValue.trim(), durationSeconds: seconds });
     }
   }, [onStart]);
 

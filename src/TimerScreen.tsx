@@ -15,7 +15,7 @@ function formatTime(seconds: number): string {
 }
 
 export function TimerScreen({ config, onComplete }: Props) {
-  const totalSeconds = config.durationMinutes * 60;
+  const totalSeconds = config.durationSeconds;
   const [remaining, setRemaining] = useState(totalSeconds);
   const [isRunning, setIsRunning] = useState(true);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);

@@ -8,7 +8,7 @@ export function App() {
   const [screen, setScreen] = useState<Screen>("setup");
   const [config, setConfig] = useState<SprintConfig>({
     intention: "",
-    durationMinutes: 25,
+    durationSeconds: 25 * 60,
   });
 
   const handleStart = (newConfig: SprintConfig) => {
@@ -21,7 +21,7 @@ export function App() {
   };
 
   const handleNewSprint = () => {
-    setConfig({ intention: "", durationMinutes: 25 });
+    setConfig({ intention: "", durationSeconds: 25 * 60 });
     setScreen("setup");
   };
 

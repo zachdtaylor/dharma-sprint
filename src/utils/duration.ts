@@ -2,7 +2,7 @@ export function parseDuration(input: string): number | null {
   const trimmed = input.trim().toLowerCase();
   if (!trimmed) return null;
 
-  let totalMinutes = 0;
+  let totalSeconds = 0;
   let current = "";
 
   for (let i = 0; i < trimmed.length; i++) {
@@ -14,11 +14,11 @@ export function parseDuration(input: string): number | null {
       if (isNaN(value) || value < 0) return null;
 
       if (char === "h") {
-        totalMinutes += value * 60;
+        totalSeconds += value * 3600;
       } else if (char === "m") {
-        totalMinutes += value;
+        totalSeconds += value * 60;
       } else if (char === "s") {
-        totalMinutes += Math.round(value / 60);
+        totalSeconds += value;
       }
       current = "";
     } else if (char === " ") {
@@ -31,8 +31,8 @@ export function parseDuration(input: string): number | null {
   if (current) {
     const value = parseInt(current, 10);
     if (isNaN(value) || value < 0) return null;
-    totalMinutes += value;
+    totalSeconds += value * 60;
   }
 
-  return totalMinutes > 0 ? totalMinutes : null;
+  return totalSeconds > 0 ? totalSeconds : null;
 }
